@@ -4,13 +4,31 @@ public class ParImpar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite um Número: ");
-        int numero = scanner.nextInt();
+        int quantNumeros;
+        int numeros;
+        int quantDePares = 0;
+        int quantDeImpares = 0;
+        
 
-        if (numero%2==0) {
-            System.out.println("Número PAR!!!");
-        }else{
-            System.out.println("Número ÍMPAR!!!");
-        }
+        System.out.println("Quantos números você deseja: ");
+        quantNumeros = scanner.nextInt();
+
+        int contador = 0;
+        do{
+            System.out.println("Nùmero: ");
+            numeros = scanner.nextInt();
+
+            if (numeros % 2 == 0) {
+                quantDePares++;
+            }else{
+                quantDeImpares++;
+            }
+
+            contador++;
+        }while(contador < quantNumeros);
+
+        System.out.println("Números Pares: " + quantDePares);
+        System.out.println("Números Impares: " + quantDeImpares);
+
     }
 }
